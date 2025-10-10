@@ -44,6 +44,8 @@
         <div style="margin-top: 5px">
             <div>探索</div>
             <a href="https://github.com/orgs/FishPiOffical/repositories" target="_blank">摸鱼派开源项目</a><br>
+            <a href="${servePath}/agreement" target="_blank">用户协议</a>
+            <a href="${servePath}/privacy" target="_blank">隐私政策</a>
             <a href="${servePath}/logs" target="_blank">日志公开</a>
         </div>
         <div class="fn-hr5"></div>

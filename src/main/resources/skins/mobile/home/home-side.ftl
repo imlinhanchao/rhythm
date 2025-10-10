@@ -108,10 +108,22 @@
             </span>
         </div>
         </#if>
-        <#if "" != user.userCity && 0 == user.userGeoStatus>
+        <#if "" != user.userCountry && "" != user.userProvince && "" != user.userCity && 0 == user.userGeoStatus>
         <div class="user-info">
-            <span class="ft-gray">${geoLabel}</span> <#if "中国" == user.userCountry>${user.userCity}<#else>${user.userCountry} ${user.userCity}</#if>
+            <#if user.userCountry == "中国">
+                <span class="ft-gray">${geoLabel}</span> ${user.userProvince} ${user.userCity}
+            <#else>
+                <span class="ft-gray">${geoLabel}</span> ${user.userCountry} ${user.userProvince} ${user.userCity}
+            </#if>
         </div>
+        <#elseif "" != user.userCountry && "" != user.userProvince && 0 == user.userGeoStatus>
+            <div class="user-info">
+                <#if user.userCountry == "中国">
+                    <span class="ft-gray">${geoLabel}</span> ${user.userProvince}
+                <#else>
+                    <span class="ft-gray">${geoLabel}</span> ${user.userCountry} ${user.userProvince}
+                </#if>
+            </div>
         </#if>
         <div class="user-info">
             <span class="ft-gray">${pointLabel}</span>

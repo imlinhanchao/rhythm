@@ -33,7 +33,7 @@
             <div class="wrapper verify">
                 <div class="verify-wrap">
                     <div class="form">
-                        <svg><use xlink:href="#logo"></use></svg>
+                        <img src="https://file.fishpi.cn/logo_raw.png" style="width: 50px;height: 50px;margin: 0 auto;display: block;"/>
                         <div class="input-wrap">
                             <svg><use xlink:href="#userrole"></use></svg>
                             <input id="nameOrEmail" type="text" autofocus="autofocus" placeholder="${nameOrEmailLabel}" autocomplete="off" />

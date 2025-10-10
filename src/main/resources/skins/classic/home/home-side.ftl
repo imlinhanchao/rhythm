@@ -115,11 +115,23 @@
             <span id="userTagsDom"><#list user.userTags?split(',') as tag> ${tag?html}<#if tag_has_next>,</#if></#list></span>
         </div>
         </#if>
-        <#if "" != user.userCity && 0 == user.userGeoStatus>
-        <div class="user-info">
-            <span class="ft-gray">${geoLabel}</span> <#if "中国" == user.userCountry>${user.userCity}<#else>${user.userCountry} ${user.userCity}</#if>
-        </div>
-        </#if>
+            <#if "" != user.userCountry && "" != user.userProvince && "" != user.userCity && 0 == user.userGeoStatus>
+                <div class="user-info">
+                    <#if user.userCountry == "中国">
+                        <span class="ft-gray">${geoLabel}</span> ${user.userProvince} ${user.userCity}
+                    <#else>
+                        <span class="ft-gray">${geoLabel}</span> ${user.userCountry} ${user.userProvince} ${user.userCity}
+                    </#if>
+                </div>
+            <#elseif "" != user.userCountry && "" != user.userProvince && 0 == user.userGeoStatus>
+                <div class="user-info">
+                    <#if user.userCountry == "中国">
+                        <span class="ft-gray">${geoLabel}</span> ${user.userProvince}
+                    <#else>
+                        <span class="ft-gray">${geoLabel}</span> ${user.userCountry} ${user.userProvince}
+                    </#if>
+                </div>
+            </#if>
         <#if user.userURL!="">
         <div class="user-info">
             <a id="userURLDom" target="_blank" rel="friend" href="${user.userURL?html}">${user.userURL?html}</a>
