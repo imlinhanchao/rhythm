@@ -187,11 +187,24 @@ public class IndexProcessor {
         Dispatcher.get("/games/emojiPair", indexProcessor::showEmojiPair, loginCheck::handle);
         Dispatcher.get("/games/evolve/", indexProcessor::showEvolve, loginCheck::handle);
         Dispatcher.get("/user/checkedIn", indexProcessor::isCheckedIn, loginCheck::handle);
-        Dispatcher.get("/oldAlmanac", indexProcessor::showOldAlmanac, anonymousViewCheckMidware::handle);
         Dispatcher.get("/download", indexProcessor::showDownload, anonymousViewCheckMidware::handle);
         Dispatcher.get("/breezemoons", indexProcessor::showBreezemoons, anonymousViewCheckMidware::handle);
         Dispatcher.get("/privacy", indexProcessor::showPrivacy, anonymousViewCheckMidware::handle);
+        Dispatcher.get("/agreement", indexProcessor::showAgreement, anonymousViewCheckMidware::handle);
     }
+
+
+    /**
+     * 用户协议
+     *
+     * @param context
+     */
+    public void showAgreement(final RequestContext context) {
+        final AbstractFreeMarkerRenderer renderer = new SkinRenderer(context, "user-agreement.ftl");
+        final Map<String, Object> dataModel = renderer.getDataModel();
+        dataModelService.fillHeaderAndFooter(context, dataModel);
+    }
+
 
     /**
      * 隐私政策
@@ -739,24 +752,6 @@ public class IndexProcessor {
         dataModelService.fillSideTags(dataModel);
         dataModelService.fillLatestCmts(dataModel);
     }
-
-
-    /**
-     * Shows old almanac.
-     *
-     * @param context the specified context
-     */
-    public void showOldAlmanac(final RequestContext context) {
-        //老黄历
-        final AbstractFreeMarkerRenderer renderer = new SkinRenderer(context, "/old-almanac.ftl");
-        final Map<String, Object> dataModel = renderer.getDataModel();
-        dataModelService.fillHeaderAndFooter(context, dataModel);
-        dataModelService.fillRandomArticles(dataModel);
-        dataModelService.fillSideHotArticles(dataModel);
-        dataModelService.fillSideTags(dataModel);
-        dataModelService.fillLatestCmts(dataModel);
-    }
-
 
     /**
      * Shows download.

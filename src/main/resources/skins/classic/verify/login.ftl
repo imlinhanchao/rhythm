@@ -35,9 +35,7 @@
     <div class="wrapper verify">
         <div class="verify-wrap">
             <div class="form" id="account_login">
-                <svg>
-                    <use xlink:href="#logo"></use>
-                </svg>
+                <img src="https://file.fishpi.cn/logo_raw.png" style="width: 100px;height: 100px;margin: 0 auto;display: block;"/>
                 <div class="input-wrap">
                     <svg>
                         <use xlink:href="#userrole"></use>
@@ -75,9 +73,7 @@
                 <button onclick="toggleLoginType(0)">扫码登录</button>
             </div>
             <div id="qrcode_login" class="form hide-me">
-                <svg>
-                    <use xlink:href="#logo"></use>
-                </svg>
+                <img src="https://file.fishpi.cn/logo_raw.png" style="width: 100px;height: 100px;margin: 0 auto;display: block;"/>
                 <div class="login-qrcode-box" id="login-qrcode-div">
                     <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=web:" id="qrcode_img" alt="">
                 </div>

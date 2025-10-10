@@ -127,7 +127,7 @@
                             <iframe src="https://ghbtns.com/github-btn.html?user=FishPiOffical&repo=rhythm&type=star&count=true&size=large" frameborder="0" scrolling="0" width="130px" height="30px"></iframe>
                         </div>
                         <div class="fn-none list">
-                            <div class="ft-center"> <svg><use xlink:href="#logo"></use></svg> </div> <br/>
+                            <div class="ft-center"> <img src="https://file.fishpi.cn/logo_raw.png" style="width: 100px;height: 100px;margin: 0 auto;display: block;"/> </div> <br/>
                             <ul>
                                 <li>
                                     <a href="${servePath}/article/1630569106133">${getStartLabel}</a>

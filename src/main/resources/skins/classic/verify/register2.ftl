@@ -33,8 +33,7 @@
             <div class="wrapper verify">
                 <div class="verify-wrap">
                     <div class="form">
-                        <svg><use xlink:href="#logo"></use></svg>
-
+                        <img src="https://file.fishpi.cn/logo_raw.png" style="width: 100px;height: 100px;margin: 0 auto;display: block;"/>
                         <div class="input-wrap">
                             <svg><use xlink:href="#userrole"></use></svg>
                             <input type="text" id="registerUserName2" value="${user.userName}" readonly="readonly" placeholder="${userNameLabel}" autocomplete="off" />

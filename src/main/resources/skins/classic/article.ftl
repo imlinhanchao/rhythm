@@ -555,9 +555,7 @@
 <div class="article-header">
     <h1 aria-label="${symphonyLabel}" class="tooltipped tooltipped-s">
         <a href="${servePath}">
-            <svg>
-                <use xlink:href="#logo"></use>
-            </svg>
+            <img src="https://file.fishpi.cn/logo_raw.png" style="width: 38px;height: 38px"/>
         </a>
     </h1>
     <h2 class="fn-ellipsis fn-pointer" id="bigTitle" style="transition: .5s;max-width: 600px" onclick="Util.goTop()">
