@@ -339,7 +339,7 @@ function injectCountCSS() {
   cursor: grab;
   user-select: none;
   overflow: hidden;
-  border: 1px solid #e0e7ef;
+  border: 1px solid var(--color-base-200);
   backdrop-filter: blur(8px);
   position: relative;
   text-decoration: none !important;
@@ -363,7 +363,7 @@ function injectCountCSS() {
   font-size: 1.18em;
   font-weight: 600;
   margin-bottom: 0px;
-  color: #222;
+  color: var(--color-base-content);
   text-shadow: 0 1px 2px rgba(60,80,120,0.08);
   line-height: 1.2;
 }
