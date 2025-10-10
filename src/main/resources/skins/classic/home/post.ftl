@@ -149,9 +149,10 @@
                         </svg> ${qnaLabel}
                         <span class="ft-gray">${addAskArticleTipLabel}</span>
                     </#if>
-                    <div class="fn-right">
-                        <label class="article-anonymous">&nbsp;  ${statementLabel}
-                            <select id="articleStatement" name="articleStatement" style="margin-left: 5px">
+                    <div class="fn-right flex items-center space-x-1">
+                        <label class="article-anonymous">
+                            ${statementLabel}
+                            <select class="select select-sm w-[150px]" id="articleStatement" name="articleStatement" style="margin-left: 5px">
                                 <option value="0" <#if article?? && 0 == article.articleStatement>selected</#if>>${statementNoneLabel}</option>
                                 <option value="1" <#if article?? && 1 == article.articleStatement>selected</#if>>${statementAILabel}</option>
                                 <option value="2" <#if article?? && 2 == article.articleStatement>selected</#if>>${statementSpoilersLabel}</option>
@@ -159,26 +160,38 @@
                             </select>
                         </label>
                         <#if permissions["commonAddArticleAnonymous"].permissionGrant && articleType != 2 && articleType != 5>
-                        <label class="article-anonymous">${anonymousLabel}<input<#if requisite> readonly disabled</#if>
+                        <label class="article-anonymous label">
+                            <input  class="checkbox"<#if requisite>readonly disabled</#if>
                                 <#if article??> disabled="disabled"<#if 1 == article.articleAnonymous> checked</#if></#if>
-                                type="checkbox" id="articleAnonymous"></label>
+                                type="checkbox" id="articleAnonymous">
+                            ${anonymousLabel}
+                        </label>
                         </#if>
-                        <label class="article-anonymous">&nbsp;  ${showInListLabel}<input
-                                <#if (article?? && (1 == article.articleShowInList)) || !article??> checked="checked"</#if> type="checkbox" id="articleShowInList"></label>
-                        <label class="article-anonymous">&nbsp;  ${commentableLabel}<input
-                                <#if (article?? && article.articleCommentable) || !article??> checked="checked"</#if> type="checkbox" id="articleCommentable"></label>
-                        <label class="article-anonymous">&nbsp;  ${notifyFollowersLabel}<input type="checkbox" id="articleNotifyFollowers"></label>
+                        <label class="article-anonymous label">
+                        <input class="checkbox" <#if (article?? && (1 == article.articleShowInList)) || !article??> 
+                            checked="checked"</#if> type="checkbox" id="articleShowInList">
+                            ${showInListLabel}
+                        </label>
+                        <label class="article-anonymous label">
+                        <input class="checkbox" <#if (article?? && article.articleCommentable) || !article??> 
+                            checked="checked"</#if> type="checkbox" id="articleCommentable">
+                            ${commentableLabel}
+                        </label>
+                        <label class="article-anonymous label">
+                            <input class="checkbox" type="checkbox" id="articleNotifyFollowers">
+                            ${notifyFollowersLabel}
+                        </label>
                         <#if article?? && permissions["commonRemoveArticle"].permissionGrant>
-                            <button class="red" tabindex="11" onclick="AddArticle.remove('${csrfToken}', this)">${removeArticleLabel}</button>
+                            <button class="btn btn-error btn-outline" tabindex="11" onclick="AddArticle.remove('${csrfToken}', this)">${removeArticleLabel}</button>
                         </#if>
                         <#if article??>
                             <#if permissions["commonUpdateArticle"].permissionGrant>
-                            <button class="green" id="addArticleBtn" tabindex="10"<#if requisite> readonly disabled</#if>
+                            <button class="btn btn-accent " id="addArticleBtn" tabindex="10"<#if requisite> readonly disabled</#if>
                                     onclick="AddArticle.add('${csrfToken}', this)">${submitLabel}</button>
                             </#if>
                         <#else>
                             <#if permissions["commonAddArticle"].permissionGrant>
-                            <button class="green" id="addArticleBtn" tabindex="10"<#if requisite> readonly disabled</#if>
+                            <button class="btn btn-accent" id="addArticleBtn" tabindex="10"<#if requisite> readonly disabled</#if>
                                     onclick="AddArticle.confirmAdd('${csrfToken}', this)">${postLabel}</button>
                             </#if>
                         </#if>

@@ -19,88 +19,104 @@
 
 -->
 <div class="footer">
-    <div class="wrapper">
+    <div class="wrapper max-md:text-center">
         <div class="slogan">
             摸鱼派 - 鱼油专属摸鱼社区
         </div>
-        <div class="fn-flex-1">
-            <div class="ft-smaller" style="display: inline-block">
-                <div onclick="window.open('https://www.tsyvps.com/')" style="text-align: center;padding: 8px 0px;color: #0f8cee;background-color: #e3f9fd;line-height: 20px;border-radius: 12px;width: 175px;margin-bottom: 15px;cursor: pointer;">
+        <div class="flex w-full max-md:flex-col pb-8">
+            <div class="flex-1 inline-flex flex-col">
+                <div class="flex space-x-4 max-md:flex-col max-md:space-x-0 max-md:space-y-4 items-center mb-4">
+                    <div 
+                        onclick="window.open('https://www.tsyvps.com/')" 
+                        class="w-full text-center px-3 py-5 text-info bg-info/10 rounded-lg mb-4 cursor-pointer max-w-[220px]"
+                    >
+                        <div class="flex flex-col space-y-1">
+                            <span class="inline-flex items-center justify-center space-x-1">
+                                <img class="w-[14px] h-[14px]" src="https://file.fishpi.cn/2024/11/lanyiyun-e749f98f.png">
+                                <span style="font-weight: 600">CDN由蓝易云支持</span><br>
+                            </span>
+                            <span class="text-base-content whitespace-nowrap">性价比主机，高防 CDN</span>
+                        </div>
+                    </div>
+                    <div onclick="window.open('https://www.asiayun.com/')" class="w-full text-center px-3 py-5 text-warning bg-warning/10 rounded-lg mb-4 cursor-pointer max-w-[220px]">
+                        <div class="flex flex-col space-y-1">
+                            <span class="inline-flex items-center justify-center space-x-1">
+                                <img class="w-[14px] h-[14px]" src="https://file.fishpi.cn/2024/11/asiayun-d4fdb0f6.png">
+                                <span style="font-weight: 600">云集群由亚洲云支持</span>
+                            </span>
+                            <span class="text-base-content whitespace-nowrap">亚洲云，安全可靠的云服务</span>
+                        </div>
+                    </div>
+                    <div onclick="window.open('https://zhuayuya.com/')" class="w-full text-center px-3 py-5 text-success bg-success/10 rounded-lg mb-4 cursor-pointer max-w-[220px]">
+                        <div class="flex flex-col space-y-1">
+                            <span class="inline-flex items-center justify-center space-x-1">
+                                <svg class="w-[14px] h-[14px]">
+                                    <use xlink:href="#zyy"></use>
+                                </svg>
+                                <span style="font-weight: 600">抓鱼鸭 - 新标签页</span>
+                            </span>
+                            <span class="text-base-content whitespace-nowrap">是一个有趣的新标签页</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-nav fn-clear ft-smaller">
+                    <div class="mb-2 font-bold text-lg">摸鱼好站</div>
+                    <p class="space-x-2">
+                        <a target="_blank" href="http://www.cxy521.com/">程序员导航</a>
+                        <span> | </span>
+                        <a target="_blank" href="https://bbs.tampermonkey.net.cn/">油猴中文网</a>
+                        <span> | </span>
+                        <a target="_blank" href="https://www.redian.me/">摸鱼热点</a>
+                        <span> | </span>
+                        <a target="_blank" href="https://www.lundao.pub/">论道社区</a>
+                        <span> | </span>
+                        <a target="_blank" href="https://nbtab.com/">NBtab新标签页</a>
+                    </p>
+                </div>
+                <div class="fn-clear ft-smaller">
+                    <div class="mb-2 font-bold text-lg">探索</div>
                     <div>
-                        <img style="vertical-align:-3px;width: 14px;height: 14px;" src="https://file.fishpi.cn/2024/11/lanyiyun-e749f98f.png">&nbsp;&nbsp;<span style="font-weight: 600">CDN由蓝易云支持</span><br>
-                        <span style="color: #323232;">性价比主机，高防 CDN</span>
+                        <p><a href="https://github.com/orgs/FishPiOffical/repositories" target="_blank">摸鱼派开源项目</a></p>
+                        <p class="space-x-1">
+                            <a href="${servePath}/download">摸鱼派客户端</a>
+                            <a href="https://fishpi.cn/article/1653059669471" target="_blank" title="iOS 客户端"><svg><use xlink:href="#ic-apple"></use></svg></a>&nbsp;
+                            <a href="https://fishpi.cn/article/1662284317542" target="_blank" title="PC 客户端"><svg><use xlink:href="#ic-pc"></use></svg></a>&nbsp;
+                            <a href="https://fishpi.cn/article/1638189205758" target="_blank" title="IntelliJ IDEA插件"><svg><use xlink:href="#ic-idea"></use></svg></a>&nbsp;
+                            <a href="https://fishpi.cn/article/1639648815789" target="_blank" title="Chrome 插件"><svg><use xlink:href="#ic-chrome"></use></svg></a>&nbsp;
+                            <a href="https://fishpi.cn/article/1745833503658" target="_blank" title="安卓 APK 应用"><svg><use xlink:href="#ic-apk"></use></svg></a>&nbsp;
+                            <a href="https://zhuanlan.zhihu.com/p/445372463" target="_blank" title="VSCode 插件"><svg><use xlink:href="#ic-vscode"></use></svg></a>&nbsp;
+                            <a href="https://fishpi.cn/article/1641135630423" target="_blank" title="Python 客户端"><svg><use xlink:href="#ic-python"></use></svg></a>&nbsp;
+                            <a href="https://fishpi.cn/article/1641661864119" target="_blank" title="Golang 客户端"><svg><use xlink:href="#ic-golang"></use></svg></a>
+                            <a href="https://fishpi.cn/article/1748939764736" target="_blank" title="uTools 插件"><svg><use xlink:href="#ic-utools"></use></svg></a>
+                        </p>
+                    </div>
+                </div>
+                <div>
+                    <div class="inline-flex flex-col space-y-2">
+                        <div class="ft-smaller">
+                            Copyright © 2021 - 2025 W&P Tech. All Rights Reserved. 北京白与画科技有限公司 版权所有
+                        </div>
+                        <p class="flex justify-between space-x-2">
+                            <a rel="help" href="${servePath}/article/1630569106133">${aboutLabel}</a>
+                            <a href="${servePath}/tag/announcement">${symAnnouncementLabel}</a>
+                            <a href="${servePath}/domains">${domainLabel}</a>
+                            <a href="${servePath}/tags">${tagLabel}</a>
+                            <a href="${servePath}/statistic">${dataStatLabel}</a>
+                            <a href="${servePath}/article/1636516552191">开放 API</a>
+                            <a href="${servePath}/privacy" target="_blank">隐私政策</a>
+                            <a href="${servePath}/logs" target="_blank">日志公开</a>
+                        </p>
                     </div>
                 </div>
             </div>
-            <div style="display: inline-block; width: 5px"></div>
-            <div class="ft-smaller" style="display: inline-block">
-                <div onclick="window.open('https://www.asiayun.com/')" style="text-align: center;padding: 8px 0px;color: #ff6000;background-color: #ffefc3c9;line-height: 20px;border-radius: 12px;width: 175px;margin-bottom: 15px;cursor: pointer;">
-                    <div>
-                        <img style="vertical-align:-3px;width: 14px;height: 14px;" src="https://file.fishpi.cn/2024/11/asiayun-d4fdb0f6.png">&nbsp;&nbsp;<span style="font-weight: 600">云集群由亚洲云支持</span><br>
-                        <span style="color: #323232;">亚洲云，安全可靠的云服务</span>
-                    </div>
-                </div>
-            </div>
-            <div style="display: inline-block; width: 5px"></div>
-            <div class="ft-smaller" style="display: inline-block">
-                <div onclick="window.open('https://zhuayuya.com/')" style="text-align: center;padding: 8px 0px;color: #39b362;background-color: #d9ffcfc9;line-height: 20px;border-radius: 12px;width: 175px;margin-bottom: 15px;cursor: pointer;">
-                    <div>
-                        <svg style="vertical-align: -2px;">
-                            <use xlink:href="#zyy"></use>
-                        </svg>&nbsp;&nbsp;<span style="font-weight: 600">抓鱼鸭 - 新标签页</span><br>
-                        <span style="color: #323232;">是一个有趣的新标签页</span>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-nav fn-clear ft-smaller">
-                <div style="font-weight: 500">摸鱼好站</div>
-                <a style="margin-right: 0px; padding-right: 0px" target="_blank" href="http://www.cxy521.com/">程序员导航</a>
-                &nbsp;｜&nbsp;
-                <a style="margin-right: 0px; padding-right: 0px" target="_blank" href="https://bbs.tampermonkey.net.cn/">油猴中文网</a>
-                &nbsp;｜&nbsp;
-                <a style="margin-right: 0px; padding-right: 0px" target="_blank" href="https://www.redian.me/">摸鱼热点</a>
-                &nbsp;｜&nbsp;
-                <a style="margin-right: 0px; padding-right: 0px" target="_blank" href="https://www.lundao.pub/">论道社区</a>
-                &nbsp;｜&nbsp;
-                <a style="margin-right: 0px; padding-right: 0px" target="_blank" href="https://nbtab.com/">NBtab新标签页</a>
-            </div>
-            <div class="fn-clear ft-smaller">
-                <div style="margin-top: 5px; font-weight: 500">探索</div>
+            <div class="flex justify-end flex-col items-end space-y-2 max-md:items-center max-md:space-y-4 max-md:mt-4">
                 <div class="ft-smaller fn-right">
                     <a href="https://ipw.cn/ipv6webcheck/?site=fishpi.cn" target="_blank" title="本站支持IPv6访问"><img src="https://static.ipw.cn/icon/ipv6-certified-s1.svg" alt="本站支持IPv6访问" style="display: inline-block; vertical-align: middle; width: 85px; height: 36px;"></a><br>
                 </div>
-                <div>
-                    <a href="https://github.com/orgs/FishPiOffical/repositories" target="_blank">摸鱼派开源项目</a><br>
-                    <a href="${servePath}/download">摸鱼派客户端</a>&nbsp;&nbsp;
-                    <span>
-                        <a href="https://fishpi.cn/article/1653059669471" target="_blank" title="iOS 客户端"><svg style="vertical-align: -1px;"><use xlink:href="#ic-apple"></use></svg></a>&nbsp;
-                        <a href="https://fishpi.cn/article/1662284317542" target="_blank" title="PC 客户端"><svg style="vertical-align: -2px;"><use xlink:href="#ic-pc"></use></svg></a>&nbsp;
-                        <a href="https://fishpi.cn/article/1638189205758" target="_blank" title="IntelliJ IDEA插件"><svg style="vertical-align: -2px;"><use xlink:href="#ic-idea"></use></svg></a>&nbsp;
-                        <a href="https://fishpi.cn/article/1639648815789" target="_blank" title="Chrome 插件"><svg style="vertical-align: -2px;"><use xlink:href="#ic-chrome"></use></svg></a>&nbsp;
-                        <a href="https://fishpi.cn/article/1745833503658" target="_blank" title="安卓 APK 应用"><svg style="vertical-align: -2px;"><use xlink:href="#ic-apk"></use></svg></a>&nbsp;
-                        <a href="https://zhuanlan.zhihu.com/p/445372463" target="_blank" title="VSCode 插件"><svg style="vertical-align: -2px;"><use xlink:href="#ic-vscode"></use></svg></a>&nbsp;
-                        <a href="https://fishpi.cn/article/1641135630423" target="_blank" title="Python 客户端"><svg style="vertical-align: -2px;"><use xlink:href="#ic-python"></use></svg></a>&nbsp;
-                        <a href="https://fishpi.cn/article/1641661864119" target="_blank" title="Golang 客户端"><svg style="vertical-align: -2px;"><use xlink:href="#ic-golang"></use></svg></a>
-                        <a href="https://fishpi.cn/article/1748939764736" target="_blank" title="uTools 插件"><svg style="vertical-align: -2px;"><use xlink:href="#ic-utools"></use></svg></a>
-                    </span>
+                <div class="ft-smaller fn-right">
+                    <a href="https://beian.miit.gov.cn/" target="_blank" style="float: right">京ICP备2022000226号-1</a><br>
+                    <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11011302003886" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="https://mbdp01.bdstatic.com/static/landing-pc/img/icon_police.7296bdfd.png" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px;">京公网安备 11011302003886号</p></a>
                 </div>
-            </div>
-            <div class="footer-nav fn-clear" style="margin-top: 15px; margin-bottom: 15px">
-                <div class="ft-smaller">
-                    Copyright © 2021 - 2025 W&P Tech. All Rights Reserved. 北京白与画科技有限公司 版权所有
-                    <div class="ft-smaller fn-right">
-                        <a href="https://beian.miit.gov.cn/" target="_blank" style="float: right">京ICP备2022000226号-1</a><br>
-                        <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11011302003886" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="https://mbdp01.bdstatic.com/static/landing-pc/img/icon_police.7296bdfd.png" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px;">京公网安备 11011302003886号</p></a>
-                    </div>
-                </div>
-                <a rel="help" href="${servePath}/article/1630569106133">${aboutLabel}</a>
-                <a href="${servePath}/tag/announcement">${symAnnouncementLabel}</a>
-                <a href="${servePath}/domains">${domainLabel}</a>
-                <a href="${servePath}/tags">${tagLabel}</a>
-                <a href="${servePath}/statistic">${dataStatLabel}</a>
-                <a href="${servePath}/article/1636516552191">开放 API</a>
-                <a href="${servePath}/privacy" target="_blank">隐私政策</a>
-                <a href="${servePath}/logs" target="_blank">日志公开</a>
             </div>
         </div>
     </div>

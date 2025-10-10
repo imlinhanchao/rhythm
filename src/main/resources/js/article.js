@@ -1002,7 +1002,7 @@ var Article = {
         narrow: false,
         autoplay: false,
         mutex: true,
-        theme: '#4285f4',
+        theme: 'var(--color-accent)',
         preload: 'none',
         mode: 'circulation',
         music: {
@@ -1024,7 +1024,7 @@ var Article = {
       narrow: false,
       autoplay: false,
       mutex: true,
-      theme: '#4285f4',
+      theme: 'var(--color-accent)',
       mode: 'order',
       preload: 'none',
       music: {

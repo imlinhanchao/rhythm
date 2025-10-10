@@ -1279,7 +1279,7 @@ border-bottom: none;
     resetMoreBtnListen: function () {
         $("body").unbind();
         $('body').click(function (event) {
-            if ($(event.target).closest('a').attr('id') !== 'aPersonListPanel' &&
+            if (!$(event.target).closest('#aPersonListPanel') &&
                 $(event.target).closest('.module').attr('id') !== 'personListPanel') {
                 $('#personListPanel').hide()
             }

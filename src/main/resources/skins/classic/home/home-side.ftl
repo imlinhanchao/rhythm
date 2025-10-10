@@ -21,7 +21,7 @@
 <div class="ft-center module">
     <div id="avatarURLDom" class="avatar-big" style="background-image:url('${user.userAvatarURL210}')"></div>
     <div>
-        <div class="user-name">
+        <div class="user-name space-y-2">
             <div id="userNicknameDom"><b>${user.userNickname}</b></div>
             <div class="ft-gray">${user.userName}</div>
 
@@ -30,7 +30,7 @@
 
             <div>
                 <#if isLoggedIn && (currentUser.userName != user.userName)>
-                    <button class="green small" onclick="window.location.href = '${servePath}/chat?toUser=${user.userName}'">
+                    <button class="btn btn-accent btn-xs" onclick="window.location.href = '${servePath}/chat?toUser=${user.userName}'">
                         ${privateMessageLabel}
                     </button>
                 </#if>
@@ -41,7 +41,7 @@
                 </#if>
                 <#if (isLoggedIn && ("adminRole" == currentUser.userRole || currentUser.userName == user.userName)) || 0 == user.userOnlineStatus>
                     <span class="tooltipped tooltipped-n" aria-label="<#if user.userOnlineFlag>${onlineLabel}<#else>${offlineLabel}</#if>">
-                        <span class="<#if user.userOnlineFlag>online<#else>offline</#if>"><#if user.userOnlineFlag>在线<#else>离线</#if></span>
+                        <span class="btn btn-xs <#if user.userOnlineFlag>btn-success<#else>btn-disabled</#if>"><#if user.userOnlineFlag>在线<#else>离线</#if></span>
                     </span>
                 </#if>
                 <#if permissions["userAddPoint"].permissionGrant ||
@@ -57,9 +57,9 @@
                 ><svg><use xlink:href="#icon-report"></use></svg></span>
             </div>
 
-            <div>
+            <div class="text-center">
                 <a href="https://fishpi.cn/article/1630575841478" target="_blank">
-                    <img style="height: 26px;margin-top: 5px;" src="
+                    <img class="h-[26px] mt-2 mx-auto" src="
                     <#if user.roleName == '管理员'>
                     https://file.fishpi.cn/adminRole.png
                     <#elseif user.roleName == 'OP'>
@@ -79,11 +79,11 @@
 
             <#if isLoggedIn && (currentUser.userName != user.userName)>
             <#if isFollowing>
-            <button class="follow" onclick="Util.unfollow(this, '${followingId}', 'user')">
+            <button class="btn btn-block btn-soft btn-sm" onclick="Util.unfollow(this, '${followingId}', 'user')">
                 ${unfollowLabel}
             </button>
             <#else>
-            <button class="follow" onclick="Util.follow(this, '${followingId}', 'user')">
+            <button class="btn btn-block btn-soft btn-sm" onclick="Util.follow(this, '${followingId}', 'user')">
                 ${followLabel}
             </button>
             </#if>
@@ -139,7 +139,7 @@
             <span class="ft-gray">${checkinStreakPart2Label}</span>
         </div>
         </div>
-        <ul class="status fn-flex" style="padding-bottom: 0">
+        <ul class="user-status grid grid-cols-5" style="padding-bottom: 0">
             <li id="userTags">
                 <strong>${user.userTagCount?c}</strong>
                 <span class="ft-gray">${tagLabel}</span>
@@ -161,7 +161,7 @@
                 <span class="ft-gray">${followingUsersLabel}</span>
             </li>
         </ul>
-        <ul class="status fn-flex" style="padding-top: 0">
+        <ul class="user-status fn-flex" style="padding-top: 0">
             <li id="onlineMinute" style="cursor:pointer;">
                 <strong>
                     <#assign x=(user.onlineMinute?c)>

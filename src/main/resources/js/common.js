@@ -229,8 +229,10 @@ var Util = {
         }
     },
     parseHljs: function () {
+        const darkTheme = ['dark', 'halloween', 'forest', 'dracula', 'business', 'night', 'coffee'];
+        const isDarkTheme = darkTheme.includes(document.documentElement.getAttribute('data-theme'));
         Vditor.highlightRender({
-            style: 'github',
+            style: isDarkTheme ? 'github-dark' : 'github',
             enable: !Label.luteAvailable,
         }, document)
     },
@@ -1074,7 +1076,8 @@ var Util = {
                     $('#aNotifications').
                     removeClass('no-msg tooltipped tooltipped-w').
                     addClass('msg').
-                    html(icon + count).
+                    children('#aNotificationCount').
+                    html(count).
                     attr('href', 'javascript:void(0)')
                     if (0 === result.userNotifyStatus &&
                         window.localStorage.hadNotificate !== count.toString() &&
@@ -1115,8 +1118,9 @@ var Util = {
                     $('#aNotifications').
                     removeClass('msg').
                     addClass('no-msg tooltipped tooltipped-w').
-                    html(icon + count).
-                    attr('href', Label.servePath + '/notifications')
+                    attr('href', Label.servePath + '/notifications').
+                    children('#aNotificationCount').
+                    html(count)
                 }
             },
         })
@@ -1806,8 +1810,8 @@ var Util = {
                         } else {
                             $("#chatTo" + senderUserName).find("span").html(preview + dot);
                         }
-                        if ($("#chatTo" + senderUserName).css("background-color") !== 'rgb(241, 241, 241)') {
-                            $("#chatTo" + senderUserName).css("background-color", "#fff4eb");
+                        if (!$("#chatTo" + senderUserName).hasClass('current-chat')) {
+                            $("#chatTo" + senderUserName).css("background-color", "var(--color-active-chat)");
                         }
                         // 新消息置顶
                         let html = $("#chatTo" + senderUserName).prop('outerHTML');
@@ -1896,7 +1900,7 @@ var Util = {
             }
         })
 
-        $('.nav .avatar-small').parent().click(function (e) {
+        $('.nav #aPersonListPanel').click(function (e) {
             let posRight = window.innerWidth - e.pageX - ($('#personListPanel').width() /2);
             console.log(posRight)
             $('#personListPanel').css('right',posRight + 'px')
@@ -1905,7 +1909,7 @@ var Util = {
         });
 
         $('body').click(function (event) {
-            if ($(event.target).closest('a').attr('id') !== 'aPersonListPanel' &&
+            if (!$(event.target).closest('#aPersonListPanel').length &&
                 $(event.target).closest('.module').attr('id') !== 'personListPanel') {
                 $('#personListPanel').removeClass('show');
             }

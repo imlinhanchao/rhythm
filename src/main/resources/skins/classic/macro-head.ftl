@@ -33,14 +33,13 @@
 <meta http-equiv="Window-target" content="_top" />
 <link rel="stylesheet" href="${staticServePath}/css/base.css?${staticResourceVersion}" />
 <link rel="stylesheet" href="${staticServePath}/css/responsive.css?${staticResourceVersion}" />
+<link rel="stylesheet" href="${staticServePath}/css/tailwind.min.css?${staticResourceVersion}" />
 <link rel="icon" type="image/png" href="${iconURL}" />
 <link rel="apple-touch-icon" href="${staticServePath}/images/faviconH.png">
 <link rel="search" type="application/opensearchdescription+xml" title="Rym" href="/opensearch.xml">
 <link rel="stylesheet" href="${staticServePath}/js/lib/tooltips/tooltips.min.css?${staticResourceVersion}">
-<#--<link rel="stylesheet" href="${staticServePath}/css/theme/dark.css?${staticResourceVersion}" />-->
+<script type="text/javascript" src="${staticServePath}/js/lib/vue.min.js"></script>
 ${siteVisitStatCode}
 <script type="text/javascript" charset="UTF-8" src="https://cdn.wwads.cn/js/makemoney.js"></script>
 <meta name="baidu-site-verification" content="codeva-wF3TNphcy6" />
-<script src="https://file.fishpi.cn/darkreader.js?${staticResourceVersion}"></script>
-<script src="${staticServePath}/js/color-mode.min.js?${staticResourceVersion}"></script>
 </#macro>

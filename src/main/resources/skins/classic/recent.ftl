@@ -47,7 +47,7 @@
                         </div>
                     </div>
                     </#if>
-                    <div class="module">
+                    <div class="module bg-base-100 card card-border border-base-300 card-sm p-2">
                         <div class="module-header fn-clear">
                             <span class="fn-right ft-fade">
                                 <a pjax-title="${latestLabel} - ${symphonyLabel}" class="<#if "" == current>ft-gray</#if>" href="${servePath}/recent">${defaultLabel}</a>

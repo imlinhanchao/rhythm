@@ -31,6 +31,7 @@ var Chat = {
             }
             $("#chats").html("");
             $("#chatTo" + Chat.toUser).css("background-color", "");
+            $("#chatTo" + Chat.toUser).removeClass("current-chat");
             Chat.toUser = '';
             Chat.noMore = false;
             toUser = to;
@@ -98,7 +99,11 @@ var Chat = {
                 if (toUser === "") {
                     // 未选定用户
                     $("#chatStatus").html('请在左侧列表选择最近聊天的成员，或直接发起聊天。<br><br>' +
-                        '<input class="form" id="chatWithInput" placeholder="输入用户名">&nbsp;<button onclick="Chat.startAChat()">发起聊天</button>');
+                        `<div class="join">
+                            <input class="input rounded-l" id="chatWithInput" placeholder="输入用户名">
+                            <button class="btn btn-accent rounded-r" onclick="Chat.startAChat()">发起聊天</button>
+                        </div>
+                        `);
                     // 监听回车
                     $("#chatWithInput").keypress(function (e) {
                         if (e.which == 13) {
@@ -121,7 +126,7 @@ var Chat = {
                 } else {
                     // 已选定用户，获取第一页聊天信息
                     // 选中用户
-                    $("#chatTo" + toUser).css("background-color", "#f1f1f1");
+                    $("#chatTo" + toUser).addClass("current-chat");
                     // 状态
                     $("#chatStatus").html('和 ' +
                         '<a href="' + Label.servePath + '/member/' + toUser + '">' + toUser + '</a> ' +

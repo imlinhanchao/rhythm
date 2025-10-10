@@ -42,19 +42,18 @@ dialog 200~209
 
 // Table of Contents
 // Colors
-$blue: #4285f4 !default;
-$blue-light: #dbedff !default;
-$blue-lighter: #f1f7fe !default;
-$red: #d23f31 !default;
-$red-light: #ffdce0 !default;
-$green: #569e3d !default;
-$fade: #878787!default;
-$gray: #787777 !default;
-$black: #3b3e43 !default;
-$black-text: #2c2c2c !default;
-$black-light: #616161 !default;
-$white: #ffffff !default;
-$logo-orange: #e59230 !default;
+$blue: var(--color-info) !default;
+$blue-light: color-mix(in oklab, #fff, var(--color-info) 15%) !default;
+$blue-lighter: color-mix(in oklab, #fff, var(--color-info) 5%) !default;
+$red: var(--color-error) !default;
+$red-light: color-mix(in oklab, #fff, var(--color-error) 15%) !default;
+$green: var(--color-success) !default;
+$fade: color-mix(in oklab, var(--color-base-content), var(--color-base-100) 60%) !default;
+$gray: color-mix(in oklab, var(--color-base-content), var(--color-base-100) 50%) !default;
+$black: var(--color-base-content) !default;
+$black-text: color-mix(in oklab, var(--color-base-content), var(--color-base-100) 20%) !default;
+$black-light: color-mix(in oklab, var(--color-base-content), var(--color-base-100) 40%) !default;
+$white: var(--color-base-100) !default;
 
 @font-face {
   font-family: HarmonyOS;
@@ -96,12 +95,12 @@ $font-family-code: mononoki, Consolas, "Liberation Mono", Menlo, Courier, monosp
 $shadow-tip: 0 1px 2px rgba(0,0,0,.2) !default;
 
 // theme
-$theme-primary: $white;
-$theme-accent: $logo-orange;
-$theme-secondary: $black-light;
-$theme-info: $blue-lighter;
-$theme-warning: undefined;
-$theme-error: $red-light;
-$theme-success: $blue-light;
-$theme-primary-text: $black;
-$theme-background: #f6f6f6;
+$theme-primary: var(--color-primary);
+$theme-accent: var(--color-accent);
+$theme-secondary: var(--color-secondary);
+$theme-info: var(--color-info);
+$theme-warning: var(--color-warning);
+$theme-error: var(--color-error);
+$theme-success: var(--color-success);
+$theme-primary-text: var(--color-primary);
+$theme-background: var(--color-base-300);

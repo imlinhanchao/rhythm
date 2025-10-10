@@ -31,16 +31,16 @@
         <#include "../header.ftl">
         <div class="main">
             <div class="wrapper">
-                <div class="module">
-                <h2 class="sub-head">404 Not Found!</h2>
-                <div class="ft-center"></div>
+                <div class="module text-center">
+                    <h2 class="sub-head">404 Not Found!</h2>
+                    <div class="ft-center"></div>
                 </div>
             </div>
         </div>
         <#include '../footer.ftl'/>
     </body>
     <script>
-        $('.main .wrapper div.ft-center').html('<img src="${staticServePath}/images/404/' + Math.round(Math.random() * 5) + '.gif">');
+        $('.main .wrapper div.ft-center').html('<img class="mx-auto" src="${staticServePath}/images/404/' + Math.round(Math.random() * 5) + '.gif">');
         Util.mouseClickEffects();
     </script>
 </html>

@@ -248,33 +248,33 @@ display: none;
 padding: 0 !important;
 }
 </style>
-  <div class="count-settings-modal">
+  <div class="count-settings-modal glass">
     <h2>下班倒计时设置</h2>
     <label>
       <span class="label-title">状态</span>
-      <select id="countSettingStatus">
+      <select id="countSettingStatus" class="select">
         <option value="enabled">开启</option>
         <option value="disabled">关闭</option>
       </select>
     </label>
     <label>
       <span class="label-title">上班时间 (用于计算日薪)</span>
-      <input id="countSettingsStartTime" type="time"/>
+      <input id="countSettingsStartTime" type="time" class="input"/>
     </label>
     <label>
       <span class="label-title">下班时间</span>
-      <input id="countSettingsTime" type="time"/>
+      <input id="countSettingsTime" type="time" class="input"/>
     </label>
     <label>
       <span class="label-title">午饭时间</span>
-      <input id="lunchSettingsTime" type="time"/>
+      <input id="lunchSettingsTime" type="time" class="input"/>
     </label>
     <label>
       <span class="label-title">你的日薪 (设置为0则不显示)</span>
-      <input id="salarySetting" type="number" min="0" step="0.01"/>
+      <input id="salarySetting" type="number" min="0" step="0.01" class="input"/>
     </label>
     <div class="modal-actions">
-      <button onclick='Count.saveSettings()'>保存</button>
+      <button onclick='Count.saveSettings()' class="btn btn-accent">保存</button>
     </div>
   </div>
 `, "");
@@ -378,8 +378,7 @@ function injectCountCSS() {
 
 /* 设置弹窗样式 */
 .count-settings-modal {
-  background: rgba(255,255,255,0.85);
-  border-radius: 16px;
+   border-radius: 16px;
   box-shadow: 0 8px 32px rgba(0,0,0,0.18);
   padding: 32px 24px;
   max-width: 500px;
@@ -397,59 +396,26 @@ function injectCountCSS() {
   font-size: 1.3em;
   font-weight: 600;
   margin-bottom: 18px;
-  color: #222;
+  color: var(--color-base-content);
   text-align: center;
   letter-spacing: 1px;
-}
-.count-settings-modal label {
-  display: block;
-  margin-bottom: 18px;
-  font-size: 1em;
-  color: #555;
-}
-.count-settings-modal .label-title {
-  display: block;
-  margin-bottom: 6px;
-  font-size: 0.98em;
-  color: #888;
-}
-.count-settings-modal input,
-.count-settings-modal select {
-  width: 100%;
-  box-sizing: border-box;
-  padding: 8px 14px;
-  border-radius: 8px;
-  border: 1px solid #e0e7ef;
-  font-size: 1em;
-  background: #f8fafc;
-  transition: border-color 0.2s;
-  margin-bottom: 2px;
-}
-.count-settings-modal input:focus,
-.count-settings-modal select:focus {
-  border-color: #22c55e;
-  outline: none;
 }
 .count-settings-modal .modal-actions {
   display: flex;
   justify-content: flex-end;
   margin-top: 24px;
 }
-.count-settings-modal button {
-    background: #22c55e;
-    color: #fff;
-    border: 1px solid #22c55e;
-    border-radius: 8px;
-    padding: 10px 24px;
-    font-size: 1em;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background 0.2s, border-color 0.2s;
-    box-shadow: 0 2px 8px rgba(34,197,94,0.08);
+.count-settings-modal label {
+  display: block;
+  margin-bottom: 18px;
+  font-size: 1em;
+  color: var(--color-base-content);
 }
-.count-settings-modal button:hover {
-    background: #16a34a;
-    border-color: #16a34a;
+.count-settings-modal .label-title {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 0.98em;
+  color: var(--color-base-content);;
 }
   `;
     document.head.appendChild(style);

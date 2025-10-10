@@ -34,7 +34,35 @@
 <#if isLoggedIn>
 <div class="module person-info" data-percent="${liveness}">
     <div class="module-panel">
-        <ul class="status fn-flex">
+        <div class="stats grid">
+            <div class="stat p-2 place-items-center" onclick="window.location.href = '${servePath}/member/${currentUser.userName}/following/tags'">
+                <div class="stat-value">${currentUser.followingTagCnt?c}</div>
+                <div class="stat-title">${followingTagsLabel}</div>
+            </div>
+
+            <div class="stat p-2 place-items-center" onclick="window.location.href = '${servePath}/member/${currentUser.userName}/following/users'">
+                <div class="stat-value">${currentUser.followingUserCnt?c}</div>
+                <div class="stat-title">${followingUsersLabel}</div>
+            </div>
+
+            <div class="stat p-2 place-items-center" onclick="window.location.href = '${servePath}/member/${currentUser.userName}/following/articles'">
+                <div class="stat-value">${currentUser.followingArticleCnt?c}</div>
+                <div class="stat-title">${followingArticlesLabel}</div>
+            </div>
+
+            <div class="stat p-2 place-items-center">
+                <div id="activityProcessor" class="fn-right" style="margin-top: 6px">
+                    <div class="percent-container">
+                        <div class="percent-wave">
+                            <div class="percent-wave-before"></div>
+                            <div class="percent-wave-after"></div>
+                            <div class="percent">0%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <#--  <ul class="status fn-flex">
             <li class="fn-pointer" onclick="window.location.href = '${servePath}/member/${currentUser.userName}/following/tags'">
                 <strong id="ftc">${currentUser.followingTagCnt?c}</strong>
                 <span class="ft-gray">${followingTagsLabel}</span>
@@ -58,7 +86,7 @@
                     </div>
                 </div>
             </li>
-        </ul>
+        </ul>  -->
 
         <div class="fn-clear">
             <div class="fn-right">

@@ -28,15 +28,15 @@
 /* start home common */
 .home-menu {
   list-style: none;
-  background-color: #fff;
+  background-color: var(--color-base-100);
 
   a {
     position: relative;
     display: block;
     padding: 10px 15px;
-    text-shadow: 0 1px 0 #fff;
-    border-bottom: 1px solid #eee;
-    color: $theme-secondary;
+    text-shadow: 0 1px 0 var(--color-base-100);
+    border-bottom: 1px solid var(--color-base-300);
+    color: $theme-primary;
   }
 
   a:last-child {
@@ -45,14 +45,16 @@
 
   a:hover {
     text-decoration: none;
-    background-color: #f9f9f9;
+    text-shadow: 0 1px 0 var(--color-base-content);
+    background-color: var(--color-primary-content);
   }
 
   a.current {
     font-weight: bold;
-    color: #222;
+    color: var(--color-primary);
     cursor: default;
-    background-color: #fff;
+    text-shadow: 0 1px 0 var(--color-base-content);
+    background-color: var(--color-primary-content);
   }
 
   a .todo {
@@ -104,8 +106,8 @@
   }
 
   .mbti {
-    background-color: #b2b1ff;
-    color: #fff;
+    background-color: var(--color-accent-content);
+    color: var(--color-base-100);
     font-size: 12px;
     line-height: 20px;
     border-radius: 3px;
@@ -204,14 +206,14 @@
 }
 
 .pre-post > div > a {
-  color: #404040;
+  color: color-mix(in oklab, var(--color-base-content), var(--color-base-100) 50%);
   margin: 0 10px;
   display: block;
 }
 
 .pre-post a:hover {
   text-decoration: none;
-  color: $blue;
+  color: var(var(--color-primay));
 }
 
 .pre-post a svg {
@@ -225,27 +227,16 @@
   margin: 20px 30px 0;
   text-align: left;
 }
-
+   
 .tip-add-article {
-  color: #777777;
+  color: dffff;
   list-style: circle outside none;
   margin-left: 20px;
   line-height: 22px;
 }
 
-.fn-right > .article-anonymous {
-  margin: 7px 15px 0 0;
-  line-height: 20px;
-  float: left;
-  display: inline-flex;
-  align-items: center;
-  input {
-    margin-left: 5px;
-  }
-}
-
 .post {
-  background-color: #FFF;
+  background-color: var(--color-base-200);
   padding-top: 0;
 
   &__info {
@@ -262,7 +253,7 @@
   input[type=number],
   input[type=number]:focus {
     border: 0;
-    background-color: #FFF;
+    background-color: var(--color-base-200);
     box-shadow: 0 0 0;
     border-radius: 0;
   }
@@ -279,7 +270,7 @@
     top: 10px;
     padding: 10px;
     z-index: 10;
-    color: #999;
+    color: color-mix(in oklab, var(--color-base-content), var(--color-base-100) 40%);
     margin-bottom: 0;
     width: auto;
     right: 10px;
@@ -287,14 +278,14 @@
   }
 
   #showReward {
-    color: #999;
+    color: color-mix(in oklab, var(--color-base-content), var(--color-base-100) 40%);
     width: 75%;
     margin: 20px auto 0;
     display: block;
   }
 
   #articleAskPoint {
-    border-bottom: 1px solid #f2f2f2;
+    border-bottom: 1px solid var(--color-base-200);
   }
 
   #tip {
@@ -308,20 +299,20 @@
   .tags-input,
   #articleRewardPoint,
   #articleAskPoint {
-    background-color: #fff;
+    background-color: var(--color-base-200);
     padding: 5px 10px;
     width: 100%;
     line-height: 20px;
-    border-bottom: 1px solid #f2f2f2;
-    border-top: 1px solid #f2f2f2;
+    border-bottom: 1px solid var(--color-base-200);
+    border-top: 1px solid var(--color-base-200);
     box-sizing: border-box;
   }
 
   .tags-input span.tag {
     margin: 0 5px 0 0px;
     padding: 0 5px;
-    background: #eee;
-    color: #999;
+    background: var(--color-base-300);
+    color: var(--color-base-content);
     line-height: 22px;
   }
 
@@ -337,7 +328,7 @@
 
   .tags-input span.tag.haved {
     color: $black-text;
-    background-color: #ccc;
+    background-color: color-mix(in oklab, var(--color-base-100), var(--color-base-content) 40%) ;
     transition: background 0.5s ease-in, color 0.3s ease-out;
   }
 
@@ -358,8 +349,8 @@
   .domains-tags {
     display: none;
     position: absolute;
-    background-color: #FFF;
-    border: 1px solid #eee;
+    background-color: var(--color-base-100);
+    border: 1px solid var(--color-base-300);
     z-index: 82;
     border-radius: 0 0 3px 3px;
     width: 50%;
@@ -369,18 +360,18 @@
   }
 
   .domain-tags {
-    border-top: 1px solid #eee;
+    border-top: 1px solid var(--color-base-300);
     margin-top: 10px;
     padding-top: 10px;
   }
 
   .domains-tags .tag {
     cursor: pointer;
-    color: #999;
+    color: color-mix(in oklab, var(--color-base-300), var(--color-base-content) 0.2);
     margin: 0 5px 5px 0;
     padding: 2px 5px;
-    border: 1px solid #DDDDDD;
-    background-color: #f7f7f7;
+    border: 1px solid solid var(--color-base-300);
+    background-color: cubic-bezier(0, 0, 0.2, 1);
     border-radius: 3px;
   }
 
@@ -404,7 +395,7 @@
   line-height: 18px;
   flex: 1;
   padding: 7px 10px 5px;
-  color: #616161;
+  color: color-mix(in oklab, var(--color-base-300), var(--color-base-content) 0.5);
   border-bottom: 2px solid transparent;
   text-decoration: none;
   text-align: center
@@ -412,11 +403,11 @@
 
 .tabs a.selected {
   border-color: $theme-accent;
-  color: #212121;
+  color: var(--color-base-content);
 }
 
 .tabs a:hover {
-  background-color: rgba(0, 0, 0, .02);
+  background-color: color-mix(in oklab, var(--color-base-content) .02);
 }
 
 .tabs-sub > a > .count {
@@ -440,13 +431,13 @@
 
 /* start notifications */
 .notification .read {
-  background-color: #FAFAFA;
+  background-color: var(--color-base-200);
   opacity: 0.5;
   filter: alpha(opacity=50);
 }
 
 .notification li {
-  background-color: #F8F8FF;
+  background-color: var(--color-base-100);
 }
 
 .notification .vditor-reset > p {
@@ -526,7 +517,7 @@
       border: 0;
       color: $gray;
       box-shadow: 0 0 0;
-      background-color: #fff;
+      background-color: var(--color-base-100);
       padding: 0;
       border-radius: 0;
       &:focus {
@@ -560,7 +551,7 @@
 }
 
 .points td {
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid var(--color-base-300);
 }
 
 .points .date {
@@ -595,7 +586,7 @@
 }
 
 .points .sum.plus {
-  color: #569e3d;
+  color: var(--color-success);
 }
 
 .points .balance {
@@ -604,7 +595,7 @@
 }
 
 .top-ranking {
-  border-top: 1px solid #eee;
+  border-top: 1px solid var(--color-base-300);
   padding-top: 15px;
 }
 
@@ -651,7 +642,7 @@
 
 .file__items .item {
   border-radius: 4px;
-  box-shadow: 0 1px 2px rgba(0,0,0,.2);
+  box-shadow: 0 1px 2px rcolor-mix(in oklab, var(--color-base-content) .2);
   box-sizing: border-box;
   color: var(--text-gray-color);
   float: left;
@@ -694,9 +685,9 @@
 }
 
 .file__items .item__info {
-  background-color: rgba(0,0,0,.86);
+  background-color: color-mix(in oklab, var(--color-base-content) .86);
   box-sizing: border-box;
-  color: #fff;
+  color: var(--color-base-100) ;
   height: 100%;
   overflow: hidden;
   padding: 10px;

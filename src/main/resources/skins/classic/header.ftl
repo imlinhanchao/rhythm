@@ -23,7 +23,7 @@
 <div class="nav">
     <h1 aria-label="${symphonyLabel}" class="tooltipped tooltipped-s">
         <a href="${servePath}">
-            <div style="height: 55px;width: 55px;padding-bottom: 6px;" id="logo-animate"></div>
+            <div class="h-[55px] w-[55px] pb-[6px]" id="logo-animate"></div>
             <script>
                 var params = {
                     container: document.getElementById('logo-animate'),
@@ -44,7 +44,7 @@
             </script>
         </a>
     </h1>
-    <div class="responsive-hide nav-tabs">
+    <div class="md:hidden nav-tabs">
         <a pjax-title="${latestLabel} - ${symphonyLabel}"
            href="${servePath}/recent"<#if selected?? && 'recent' == selected> class="current"</#if>>
             <svg>
@@ -103,38 +103,34 @@
         <input type="submit" class="fn-none" value=""/>
     </form>
     </#if>
-    <div class="user-nav">
+    <div class="user-nav space-x-1">
         <#if isLoggedIn>
             <#if permissions["menuAdmin"].permissionGrant>
-            <a href="${servePath}/admin" aria-label="${adminLabel}" class="tooltipped tooltipped-w nav-btn-admin">
+            <a href="${servePath}/admin" aria-label="${adminLabel}" class="tooltipped tooltipped-w btn btn-ghost btn-circle">
                 <svg>
                     <use xlink:href="#manage"></use>
                 </svg>
             </a>
             </#if>
-            <a href="${servePath}/activities" aria-label="${activityLabel}" class="tooltipped tooltipped-w nav-btn-admin">
+            <a href="${servePath}/activities" aria-label="${activityLabel}" class="tooltipped tooltipped-w btn btn-ghost btn-circle">
                 <svg>
                     <use xlink:href="#playgame"></use>
                 </svg>
             </a>
-            <a href="javascript:void(0)" title="${colorModeLabel}" id="color-mode">
-                <svg>
-                    <use xlink:href="#color-sun"></use>
-                </svg>
-            </a>
+            <#include "theme-change.ftl">
             <a id="aNotifications"
-               class="tooltipped tooltipped-w <#if unreadNotificationCount == 0>no-msg<#else>msg</#if>"
+               class="badge badge-soft p-2 mr-2 tooltipped tooltipped-w <#if unreadNotificationCount == 0>no-msg<#else>msg</#if>"
                href="${servePath}/notifications" aria-label="${messageLabel}">
-                <svg style="height: 15px;pointer-events: none;">
+                <svg class="h-[15px] pointer-events-none">
                     <use xlink:href="#notification"></use>
                 </svg>
-                &nbsp;${unreadNotificationCount}
+                <span id="aNotificationCount">${unreadNotificationCount}</span>
             </a>
-            <a id="aChat" href="${servePath}/chat" class="tooltipped tooltipped-w no-msg" aria-label="私信">
-                <svg style="height: 15px;">
+            <a id="aChat" href="${servePath}/chat" class="badge badge-soft p-2 mr-2 tooltipped tooltipped-w no-msg" aria-label="私信">
+                <svg class="h-[15px]">
                     <use xlink:href="#idleChat"></use>
                 </svg>
-                &nbsp;<span id="aChatCount"><#if unreadChat?? && unreadChat gt 0>${unreadChat}<#else>0</#if></span>
+                <span id="aChatCount"><#if unreadChat?? && unreadChat gt 0>${unreadChat}<#else>0</#if></span>
             </a>
             <#if unreadChat?? && unreadChat gt 0>
                 <script>
@@ -145,19 +141,18 @@
                     }
                 </script>
             </#if>
-            <a href="${servePath}/pre-post" class="pre-post">
+            <a href="${servePath}/pre-post" class="btn btn-xs btn-soft btn-primary">
                 <svg style="height: 16px">
                     <use xlink:href="#addpost"></use>
-                    &nbsp;
-                    <span>发帖</span>
                 </svg>
+                <span>发帖</span>
             </a>
-            <a href="javascript:void(0)" id="aPersonListPanel"
-               data-url="${servePath}/member/${currentUser.userName}">
-                <span class="avatar-small" style="background-image:url('${currentUser.userAvatarURL48}')"></span>
-
-            </a>
-            <div class="module person-list" id="personListPanel">
+            <div id="aPersonListPanel" class="cursor-pointer block avatar avatar-placeholder ml-2" data-url="${servePath}/member/${currentUser.userName}">
+                <div class="ring-primary ring-offset-base-100 w-[30px] h-[30px] rounded-full ring-2 ring-offset-2">
+                    <img src="${currentUser.userAvatarURL48}" />
+                </div>
+            </div>
+            <div class="menu bg-base-200 rounded-box person-list shadow-lg" id="personListPanel">
                 <ul>
                     <li>
                         <a href="${servePath}/member/${currentUser.userName}">${goHomeLabel}</a>
@@ -180,13 +175,9 @@
                 </ul>
             </div>
         <#else>
-            <a href="javascript: Util.goLogin();" class="unlogin">${loginLabel}</a>
+            <#include "theme-change.ftl">
+            <a href="javascript:Util.goLogin();" class="unlogin">${loginLabel}</a>
             <a href="javascript:Util.goRegister()" class="unlogin">${registerLabel}</a>
-            <a href="javascript:void(0)" title="${colorModeLabel}" id="color-mode">
-                <svg>
-                    <use xlink:href="#color-sun"></use>
-                </svg>
-            </a>
         </#if>
     </div>
 </div>

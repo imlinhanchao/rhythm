@@ -90,7 +90,7 @@
             </div>
             </span>
         </div>
-        <div class="content chat-room" style="margin-left: 15px; padding: 20px 10px;background-color: #fff">
+        <div class="content chat-room ml-5 py-8 px-4 module">
             <div class="ft__gray ft__center" id="chatStatus" style="padding-top: 10px">
             </div>
             <br>
@@ -118,7 +118,7 @@
                     </div>
                 </div>
                 <div class="fn-right">
-                    <button class="green" id="sendChatBtn">发送</button>
+                    <button class="btn btn-accent" id="sendChatBtn">发送</button>
                 </div>
             </div>
             <br>

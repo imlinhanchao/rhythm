@@ -44,12 +44,12 @@
 </#if>
 
 <div class="module" style="padding-top: 10px">
-    <div class="module-header form" style="border: none;">
+    <div class="module-header form join w-full" style="border: none;">
         <input id="breezemoonInput"
                type="text"
-               class="comment__text breezemoon__input"
+               class="comment__text breezemoon__input input"
                placeholder="${breezemoonLabel}"/>
-        <span id="breezemoonPostBtn" class="btn breezemoon__btn" data-csrf="${csrfToken}">${postLabel}</span>
+        <span id="breezemoonPostBtn" class="breezemoon__btn btn btn-accent rounded-r" data-csrf="${csrfToken}">${postLabel}</span>
     </div>
     <div class="module-panel">
         <ul class="module-list active-bz-list">

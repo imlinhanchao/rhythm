@@ -31,20 +31,23 @@
   ],
   "scripts": {
     "dev": "gulp watch",
-    "build": "gulp"
+    "build": "gulp && gulp tailwind"
   },
   "devDependencies": {
+    "daisyui": "^5.1.25",
     "del": "5.0.0",
     "gulp": "4.0.2",
     "gulp-clean-css": "4.2.0",
     "gulp-concat": "2.6.1",
     "gulp-rename": "1.4.0",
     "gulp-sass": "5.1.0",
-    "gulp-uglify": "3.0.2",
-    "gulp-terser": "2.1.0"
+    "gulp-terser": "2.1.0",
+    "gulp-uglify": "3.0.2"
   },
   "dependencies": {
+    "@tailwindcss/cli": "^4.1.13",
     "sass": "1.51.0",
+    "tailwindcss": "^4.1.13",
     "vditor": "3.8.12"
   }
 }

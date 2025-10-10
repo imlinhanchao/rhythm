@@ -38,36 +38,75 @@
 }
 
 .vditor {
-  --border-color: #f1f1f1;
-  --second-color: rgba(88, 96, 105, 0.36);
+  --border-color: var(--color-base-200);
+  --second-color: color-mix(in oklab, var(--color-base-100), var(--color-base-content) 20%);
 
-  --panel-background-color: #fff;
-  --panel-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+  --panel-background-color: var(--color-base-100);
+  --panel-shadow: 0 1px 2px rgba(var(--color-base-content), .2);
 
-  --toolbar-background-color: #fdfdfd;
-  --toolbar-icon-color: #586069;
-  --toolbar-icon-hover-color: #4285f4;
+  --toolbar-background-color: var(--color-base-300);
+  --toolbar-icon-color: var(--color-base-content);
+  --toolbar-icon-hover-color: var(--color-accent);
   --toolbar-height: 35px;
   --toolbar-divider-margin-top: 8px;
 
-  --textarea-background-color: #fafbfc;
-  --textarea-text-color: #24292e;
+  --textarea-background-color: var(--color-base-200);
+  --textarea-text-color: var(--color-base-content);
 
   --resize-icon-color: var(--toolbar-icon-color);
   --resize-background-color: var(--toolbar-background-color);
   --resize-hover-icon-color: var(--panel-background-color);
   --resize-hover-background-color: var(--toolbar-icon-hover-color);
 
-  --count-background-color:rgba(27, 31, 35, .05);
-  --heading-border-color: #eaecef;
-  --blockquote-color: #6a737d;
+  --count-background-color:var(--color-base-300);
+  --heading-border-color: var(--color-base-200);
+  --blockquote-color: var(--color-base-300);
 
-  --ir-heading-color: #660e7a;
-  --ir-title-color: #808080;
-  --ir-bi-color: #0033b3;
-  --ir-link-color: #008000;
-  --ir-bracket-color: #0000ff;
-  --ir-paren-color: #008000;
+  --ir-heading-color: var(--color-secondary);
+  --ir-title-color: var(--color-neutral-content);
+  --ir-bi-color: var(--color-info);
+  --ir-link-color: var(--color-accent);
+  --ir-bracket-color: var(--color-info);
+  --ir-paren-color: var(--color-accent);
+}
+
+.vditor-reset {
+  color: var(--color-base-content);
+}
+
+.vditor-reset--error {
+  color: var(--color-error);
+}
+
+.vditor-reset hr {
+  background-color: var(--color-base-200);
+}
+
+.vditor-reset blockquote {
+  border-color: var(--color-base-300);
+  color: color-mix(in oklab, var(--color-base-content), var(--color-base-100) 4%);
+}
+
+.vditor-reset iframe {
+  border: 1px solid var(--color-base-200);
+}
+
+.vditor-reset table tr {
+  background-color: var(--color-base-200);
+  border-color: var(--color-base-300);
+  &:nth-child(2n) {
+    background-color: var(--color-base-100);
+  }
+}
+
+.vditor-reset table th {
+  border-color: color-mix(in oklab, var(--color-base-300), var(--color-base-content) 3%);
+}
+
+.vditor-reset kbd {
+  background-color: var(--color-base-200);
+  border-color: var(--color-base-content);
+  color: var(--color-base-content);
 }
 
 /* start reset */
@@ -75,14 +114,14 @@ html {
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   height: 100%;
-  background-color: $theme-primary;
+  background-color: $theme-background;
 }
 
 body {
   margin: 0;
   font-family: $font-family-base;
   font-size: 14px;
-  color: $black-text;
+  color: var(--color-base-content);
   background-color: $theme-background;
 }
 
@@ -175,7 +214,6 @@ button,
 input,
 select,
 textarea {
-  margin: 0;
   font-size: 100%;
   vertical-align: middle;
   font-family: $font-family-base;
@@ -481,23 +519,23 @@ blockquote {
 }
 
 .ft-gray {
-  color: $gray;
+  color: color-mix(in oklab, var(--color-base-content), var(--color-base-100) 50%);
 }
 
 .ft-fade {
-  color: $fade;
+  color: color-mix(in oklab, var(--color-base-content), var(--color-base-100) 60%);
 }
 
 .ft-red {
-  color: $theme-accent;
+  color: var(--color-error);
 }
 
 .ft-blue {
-  color: $blue;
+  color: var(--color-info);
 }
 
 .ft-green {
-  color: $green;
+  color: var(--color-success);
 }
 
 .ft-a-title {
@@ -535,7 +573,7 @@ blockquote {
   font-weight: 600;
   line-height: 1;
   color: $theme-secondary;
-  background-color: #eee;
+  background-color: var(--color-base-300);
   border-radius: 20px;
   display: inline-block;
 }
@@ -546,7 +584,7 @@ blockquote {
 
 .sub-head {
   padding: 15px;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid var(--color-base-300);
   line-height: 18px;
   font-size: 18px;
 }
@@ -601,10 +639,9 @@ blockquote {
 
 /* 聊天室 活跃 展示 */
 .percent-container {
-  width: 50px;
-  height: 50px;
-  padding: 2px;
-  border: 2px solid rgb(118, 218, 255);
+  width: 52px;
+  height: 52px;
+  border: 2px solid var(--color-secondary-content);
   border-radius: 50%;
   overflow: hidden;
 }
@@ -613,7 +650,7 @@ blockquote {
   width: 50px;
   height: 50px;
   color: #000;
-  background-color: rgb(118, 218, 255);
+  background-color: var(--color-secondary-content);
   border-radius: 50%;
 }
 .percent-wave-before,
@@ -624,7 +661,7 @@ blockquote {
   height: 100px;
   top: 20px;
   left: 50%;
-  background-color: rgba(255, 255, 255, .4);
+  background-color: color-mix(in oklab, var(--color-base-100), var(--color-base-content) 10%);
   border-radius: 35%;
   transform: translate(-50%, -70%) rotate(0);
   animation: rotate 6s linear infinite;
@@ -633,7 +670,7 @@ blockquote {
 }
 .percent-wave-after {
   border-radius: 45%;
-  background-color: rgba(255, 255, 255, .9);
+  background-color: color-mix(in oklab, var(--color-base-100), var(--color-base-content) 20%);
   transform: translate(-50%, -70%) rotate(0);
   animation: rotate 10s linear -5s infinite;
   z-index: 20;
@@ -647,7 +684,7 @@ blockquote {
   align-items:center;
   color: rgb(118, 218, 255);
   font-size:16px;
-  text-shadow: 0 1px #fff, 1px 0 #fff, -1px 0 #fff, 0 -1px #fff;
+  text-shadow: 0 1px var(--color-base-100), 1px 0 var(--color-base-100), -1px 0 var(--color-base-100), 0 -1px var(--color-base-100);
   z-index:30;
 }
 

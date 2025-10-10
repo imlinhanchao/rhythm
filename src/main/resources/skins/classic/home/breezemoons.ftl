@@ -44,10 +44,10 @@
     <#if permissions["commonAddBreezemoon"].permissionGrant && isLoggedIn && currentUser.userName == user.userName>
     <div class="list">
         <ul class="form">
-            <li>
-                <input id="breezemoonInput" type="text" style="padding-right: 89px;">
+            <li class="join w-full">
+                <input id="breezemoonInput" type="text" class="input">
                 <button onclick="Breezemoon.add()" id="breezemoonBtn"  data-csrftoken="${csrfToken}"
-                        class="absolute">${breezemoonLabel}</button>
+                        class="btn btn-accent rounded-r">${breezemoonLabel}</button>
             </li>
         </ul>
     </div>

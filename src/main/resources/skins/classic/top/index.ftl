@@ -30,7 +30,7 @@
         <#include "../header.ftl">
         <div class="main">
             <div class="wrapper">
-                <div class="content activity" style="background-color: #ffffff">
+                <div class="content activity bg-base-100">
                     <h2 class="sub-head"><span>🏅</span> ${totalRankLabel}</h2>
                     <div class="list">
                         <ul>

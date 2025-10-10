@@ -33,6 +33,7 @@ var terser = require('gulp-terser')
 var sass = require('gulp-sass')(require('sass'));
 var rename = require('gulp-rename')
 var del = require('del')
+const { exec } = require('child_process');
 
 function sassProcess () {
   return gulp.src('./src/main/resources/scss/*.scss').
@@ -50,8 +51,15 @@ function themeSassProcess () {
 
 
 function sassProcessWatch () {
+  gulp.watch([
+    'src/main/resources/css/tailwind.css',
+    'src/main/resources/**/*.ftl',
+  ], gulp.series('tailwind'));
   gulp.watch('./src/main/resources/scss/*.scss', sassProcess)
   gulp.watch('./src/main/resources/scss/theme/*.scss', themeSassProcess)
+  gulp.watch('./src/main/resources/js/*.js', gulp.series(() => {
+    cleanProcess().then(minJS)
+  }))
 }
 
 
@@ -142,4 +150,14 @@ function minArticleLibs () {
 gulp.task('default',
   gulp.series(cleanProcess, sassProcess,
     gulp.parallel(minJS, minUpload, minLibs),
-    gulp.parallel(minArticleCSS, minArticleLibs)))
+    gulp.parallel(minArticleCSS, minArticleLibs),
+  ))
+
+// 定义 Tailwind CLI 编译任务
+gulp.task('tailwind', function (cb) {
+  exec('npx tailwindcss -i src/main/resources/css/tailwind.css -o src/main/resources/css/tailwind.min.css --minify', function (err, stdout, stderr) {
+    console.log(stdout);
+    console.error(stderr);
+    cb(err);
+  });
+});
